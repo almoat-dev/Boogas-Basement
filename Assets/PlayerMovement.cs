@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
 
-    public float speed = 8f;
+    public float speed = 5f;
     public float sprintSpeed = 20f;
     public float maxStamina = 100.0f;
     public float staminaConsumptionRate = 6.0f;
