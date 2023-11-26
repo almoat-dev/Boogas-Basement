@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            speed = 10f;
+            speed = 5f;
             currentStamina += staminaRecoveryRate * Time.deltaTime;
             currentStamina = Mathf.Clamp(currentStamina, 0f, maxStamina);
         }
