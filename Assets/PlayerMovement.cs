@@ -16,6 +16,10 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 move = transform.right * x + transform.forward * z;
 
-        controller.Move(move * speed * Time.deltaTime); 
+        controller.Move(move * speed * Time.deltaTime);
+
+        Vector3 clampedPosition = transform.position;
+        clampedPosition.y = Mathf.Clamp(clampedPosition.y, 0,2); // Set minY and maxY according to your needs
+        transform.position = clampedPosition;
     }
 }
