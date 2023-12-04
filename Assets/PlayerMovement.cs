@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,13 +11,18 @@ public class PlayerMovement : MonoBehaviour
     public float sprintSpeed = 20f;
     public float maxStamina = 100.0f;
     public float staminaConsumptionRate = 6.0f;
-    public float staminaRecoveryRate = 5.0f;
+    public float staminaRecoveryRate = 80.0f;
+    public bool needToRecover = false; 
 
-    private float currentStamina;
+    private float currentStamina = 100;
+
+
+    public staminaBar staminaBar; 
 
     // Update is called once per frame
     void Update()
     {
+        staminaBar.SetStamina(Convert.ToInt32(currentStamina));
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
@@ -26,15 +32,25 @@ public class PlayerMovement : MonoBehaviour
 
         controller.Move(move * speed * Time.deltaTime);
 
-        if (Input.GetKey(KeyCode.LeftShift) && currentStamina > 1)
+        if (Input.GetKey(KeyCode.LeftShift) && currentStamina > 1 && needToRecover == false)
         {
+            
             speed = sprintSpeed;
             currentStamina -= staminaConsumptionRate * Time.deltaTime;
+            if (currentStamina <= 1)
+            {
+                needToRecover = true;
+            }
         }
         else
         {
+            
+            if (currentStamina >= 99)
+            {
+                needToRecover = false;
+            }
             speed = 5f;
-            currentStamina += staminaRecoveryRate * Time.deltaTime;
+            currentStamina += (staminaRecoveryRate * Time.deltaTime) * 3;
             currentStamina = Mathf.Clamp(currentStamina, 0f, maxStamina);
         }
 
