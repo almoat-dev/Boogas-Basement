@@ -984,7 +984,7 @@ GameObject:
   - component: {fileID: 1487514658}
   - component: {fileID: 1487514657}
   m_Layer: 0
-  m_Name: Ground
+  m_Name: Ceiling (Y axis 15.6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
