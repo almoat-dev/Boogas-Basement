@@ -7,10 +7,10 @@ public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
 
-    public float speed = 5f;
+    public float speed = 10f;
     public float sprintSpeed = 20f;
     public float maxStamina = 100.0f;
-    public float staminaConsumptionRate = 6.0f;
+    public float staminaConsumptionRate = 20.0f;
     public float staminaRecoveryRate = 80.0f;
     public bool needToRecover = false; 
 
@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
         {
             
             speed = sprintSpeed;
-            currentStamina -= staminaConsumptionRate * Time.deltaTime;
+            currentStamina -= staminaConsumptionRate * Time.deltaTime * 2;
             if (currentStamina <= 1)
             {
                 needToRecover = true;
@@ -49,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 needToRecover = false;
             }
-            speed = 5f;
+            speed = 10f;
             currentStamina += (staminaRecoveryRate * Time.deltaTime) * 3;
             currentStamina = Mathf.Clamp(currentStamina, 0f, maxStamina);
         }
