@@ -7,7 +7,10 @@ public class CollectKeys : MonoBehaviour
 {
     public Image[] keyImages;
     int keys = 0;
-
+    public int getKeys()
+    {
+        return keys;
+    }
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Key"))
