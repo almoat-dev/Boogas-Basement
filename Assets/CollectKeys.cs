@@ -20,5 +20,16 @@ public class CollectKeys : MonoBehaviour
             }
             Debug.Log("Keys: " + keys);
         }
+        else if(other.gameObject.CompareTag("Door"))
+        {
+            if (keys == 4)
+            {
+                Debug.Log("booga diff");
+            }
+            else
+            {
+                Debug.Log("no keys?");
+            }
+        }
     }
 }
