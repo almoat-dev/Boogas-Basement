@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.02811284, g: 0.018056508, b: 0.0058987313, a: 1}
+  m_IndirectSpecularColor: {r: 0.02808605, g: 0.018031416, b: 0.0058875075, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1394,7 +1394,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.699, y: -142}
+  m_AnchoredPosition: {x: 0.699, y: -32}
   m_SizeDelta: {x: 263.02, y: 74.7375}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &633447813
@@ -1711,7 +1711,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.13385952}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 83.698975, y: -88.075806}
+  m_AnchoredPosition: {x: 83.698975, y: 125}
   m_SizeDelta: {x: -1209.9805, y: -756.7617}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &762815503
@@ -1797,7 +1797,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -170.49988, y: 1.9712486, z: 2.2600708, w: 1.0538063}
+  m_margin: {x: -170.49988, y: 1.9712486, z: 2.2600708, w: -103.145355}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3885,7 +3885,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &1487514657
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4386,8 +4386,8 @@ Transform:
   m_GameObject: {fileID: 1862025482}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 171.21, y: 6.0624094, z: 28.359304}
-  m_LocalScale: {x: 8.32691, y: 8.32691, z: 8.32691}
+  m_LocalPosition: {x: 170.72, y: 3.66, z: 28.359304}
+  m_LocalScale: {x: 6.6199994, y: 4.82, z: 6.6199994}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
