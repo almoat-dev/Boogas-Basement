@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     public GameObject completeLevelUI;
     public void CompleteLevel()
     {
+        Time.timeScale = 0f;
+        Cursor.lockState = CursorLockMode.None;
         completeLevelUI.SetActive(true);
     }
     public void EndGame()

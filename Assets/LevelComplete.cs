@@ -9,6 +9,7 @@ public class LevelComplete : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene("SampleScene");
+        Time.timeScale = 1.0f;
     }
     public void QuitGame()
     {

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class CollectKeys : MonoBehaviour
 {
     public Image[] keyImages;
-    int keys = 0;
+    private int keys = 4;
     public int getKeys()
     {
         return keys;
