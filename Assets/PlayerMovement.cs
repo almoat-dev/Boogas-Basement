@@ -28,6 +28,22 @@ public class PlayerMovement : MonoBehaviour
     public AudioClip footStepWalk;
     public AudioClip footStepRun;
 
+    [SerializeField] private AudioSource laughter;
+
+    void Start ()
+    {
+        float waitTime;
+
+        //Plays sound effect randomly
+        waitTime = Random.Range(20, 500);
+        Invoke("playAudio", waitTime);
+    }
+
+    void playAudio()
+    {
+        laughter.Play();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -79,7 +95,7 @@ public class PlayerMovement : MonoBehaviour
             currentStamina = Mathf.Clamp(currentStamina, 0f, maxStamina);
         }
 
-            Vector3 clampedPosition = transform.position;
+        Vector3 clampedPosition = transform.position;
         clampedPosition.y = Mathf.Clamp(clampedPosition.y, 0,2); 
         transform.position = clampedPosition;
     }

@@ -3,7 +3,9 @@ guid: 2e652e5dd68eed146961e819a586cbd6
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - pauseMenuUI: {instanceID: 0}
+  - jumpScareSoundEffect: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
