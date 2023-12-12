@@ -2,6 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;
+
+using Random = UnityEngine.Random;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -16,8 +19,14 @@ public class PlayerMovement : MonoBehaviour
 
     private float currentStamina = 100;
 
+    public GameObject obj;
+    public staminaBar staminaBar;
 
-    public staminaBar staminaBar; 
+    // For audio playing purposes
+    public float stepRate;
+    public float stepCoolDown;
+    public AudioClip footStepWalk;
+    public AudioClip footStepRun;
 
     // Update is called once per frame
     void Update()
@@ -34,7 +43,15 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftShift) && currentStamina > 1 && needToRecover == false)
         {
-            
+            stepRate = 0.3f;
+            stepCoolDown -= Time.deltaTime;
+            if ((Input.GetAxis("Horizontal") != 0f || Input.GetAxis("Vertical") != 0f) && stepCoolDown < 0f)
+            {
+                GetComponent<AudioSource>().pitch = 1f + Random.Range(-0.2f, 0.2f);
+                GetComponent<AudioSource>().PlayOneShot(footStepRun, 0.9f);
+                stepCoolDown = stepRate;
+            }
+
             speed = sprintSpeed;
             currentStamina -= staminaConsumptionRate * Time.deltaTime * 2;
             if (currentStamina <= 1)
@@ -44,7 +61,15 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            
+            stepRate = 0.5f;
+            stepCoolDown -= Time.deltaTime;
+            if ((Input.GetAxis("Horizontal") != 0f || Input.GetAxis("Vertical") != 0f) && stepCoolDown < 0f)
+            {
+                GetComponent<AudioSource>().pitch = 1f + Random.Range(-0.2f, 0.2f);
+                GetComponent<AudioSource>().PlayOneShot(footStepWalk, 0.9f);
+                stepCoolDown = stepRate;
+            }
+
             if (currentStamina >= 99)
             {
                 needToRecover = false;

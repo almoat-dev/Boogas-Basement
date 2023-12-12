@@ -11,10 +11,13 @@ public class CollectKeys : MonoBehaviour
     {
         return keys;
     }
+
+    [SerializeField] private AudioSource collectionSoundEffect;
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Key"))
         {
+            collectionSoundEffect.Play();
             Destroy(other.gameObject);
             if (keys < keyImages.Length)
             {
