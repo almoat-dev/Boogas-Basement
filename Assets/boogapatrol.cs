@@ -17,11 +17,13 @@ public class boogapatrol : MonoBehaviour
     }
     private void Update()
     {
+        agent = GetComponent<NavMeshAgent>();
         if (Vector3.Distance(transform.position, target) < 1)
         {
             IterateWaypointIndex();
             UpdateDestination();
         }
+
     }
 
     void UpdateDestination()
@@ -38,5 +40,7 @@ public class boogapatrol : MonoBehaviour
             waypointIndex = 0;
         }
     }
+
+
 
 }
