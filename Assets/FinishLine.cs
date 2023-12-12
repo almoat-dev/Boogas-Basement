@@ -14,8 +14,9 @@ public class FinishLine : MonoBehaviour
         {
             if (collectKeys.getKeys() == 4)
             {
-                finishLineSoundEffect.Play();
                 gameManager.CompleteLevel();
+                finishLineSoundEffect.Play();
+             
             }
         }
     }
