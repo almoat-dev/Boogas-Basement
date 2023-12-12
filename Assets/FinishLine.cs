@@ -11,7 +11,7 @@ public class FinishLine : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            if (collectKeys.getKeys() == 4)
+            if (collectKeys.getKeys() == 0)
             {
 
                 gameManager.CompleteLevel();
