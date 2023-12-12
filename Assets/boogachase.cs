@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class boogapatrol : MonoBehaviour
+public class boogachase : MonoBehaviour
 {
     NavMeshAgent agent;
     public Transform[] waypoints;
@@ -17,12 +17,7 @@ public class boogapatrol : MonoBehaviour
     }
     private void Update()
     {
-        agent = GetComponent<NavMeshAgent>();
-        if (Vector3.Distance(transform.position, target) < 1)
-        {
-            IterateWaypointIndex();
-            UpdateDestination();
-        }
+        UpdateDestination();
 
     }
 
@@ -34,13 +29,12 @@ public class boogapatrol : MonoBehaviour
 
     void IterateWaypointIndex()
     {
-    waypointIndex++;
-        if(waypointIndex == waypoints.Length)
+        waypointIndex++;
+        if (waypointIndex == waypoints.Length)
         {
             waypointIndex = 0;
         }
     }
-
 
 
 }
